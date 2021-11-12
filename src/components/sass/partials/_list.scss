@@ -59,7 +59,7 @@ body {
 
 					.complete-task {
 						border: 2px solid rgba($white, 0.2);
-						padding: 0.7rem 0;
+						padding: 0.7rem 0 !important;
 
 						&:before {
 							margin-top: 2rem !important;
@@ -112,9 +112,9 @@ body {
 				&::placeholder {
 					color: rgba($white, 0.5);
 				}
-				:focus {
+				&:focus {
 					background: none;
-					box-shadow: none IMPO !important;
+					box-shadow: none !important;
 				}
 			}
 		}
