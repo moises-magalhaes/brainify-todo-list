@@ -1,13 +1,15 @@
 import { useState, useEffect, useRef } from "react";
 
 const TodoForm = (props) => {
+	// const initialState = JSON.parse(localStorage.getItem("input")) || [];
 	const [input, setInput] = useState("");
 
 	const inputRef = useRef(null);
 
 	useEffect(() => {
 		inputRef.current.focus();
-	});
+		// localStorage.setItem("storeData", JSON.stringify(input));
+	}, []);
 
 	const handleChange = (e) => {
 		setInput(e.target.value);
@@ -23,6 +25,10 @@ const TodoForm = (props) => {
 
 		setInput("");
 	};
+
+	// useEffect(() => {
+	// 	localStorage.setItem("storeData", JSON.stringify("input"));
+	// }, [input]);
 
 	return (
 		<form className="todo-form" onSubmit={handleSubmit}>

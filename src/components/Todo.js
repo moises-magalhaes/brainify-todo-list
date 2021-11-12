@@ -1,6 +1,3 @@
-import { useState } from "react";
-import TodoForm from "./TodoForm";
-import TodoList from "./TodoList";
 import { RiCloseCircleLine } from "react-icons/ri";
 
 const Todo = ({ todos, completeTodo, removeTodo }) => {
