@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Card, Form, FormControl, InputGroup } from "react-bootstrap";
+import { Card, Form, FormControl } from "react-bootstrap";
 import { AiOutlinePlus } from "react-icons/ai";
 
 const TodoForm = (props) => {
