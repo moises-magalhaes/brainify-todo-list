@@ -1,6 +1,6 @@
 import React from "react";
+import "./components/sass/style.scss";
 import ReactDOM from "react-dom";
-// import "./app.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 

@@ -1,14 +1,14 @@
 import { useState, useEffect, useRef } from "react";
+import { Card, Form, FormControl, InputGroup } from "react-bootstrap";
+import { AiOutlinePlus } from "react-icons/ai";
 
 const TodoForm = (props) => {
-	// const initialState = JSON.parse(localStorage.getItem("input")) || [];
 	const [input, setInput] = useState("");
 
 	const inputRef = useRef(null);
 
 	useEffect(() => {
 		inputRef.current.focus();
-		// localStorage.setItem("storeData", JSON.stringify(input));
 	}, []);
 
 	const handleChange = (e) => {
@@ -26,23 +26,27 @@ const TodoForm = (props) => {
 		setInput("");
 	};
 
-	// useEffect(() => {
-	// 	localStorage.setItem("storeData", JSON.stringify("input"));
-	// }, [input]);
-
 	return (
-		<form className="todo-form" onSubmit={handleSubmit}>
-			<input
-				type="text"
-				placeholder="Add task"
-				value={input}
-				name="text"
-				className="todo-input"
-				onChange={handleChange}
-				ref={inputRef}
-			/>
-			<button className="todo-button">Add task</button>
-		</form>
+		<Card>
+			<Card.Body>
+				<Form className="todo-form" onSubmit={handleSubmit}>
+					<div className="wrapping">
+						<button className="todo-button">
+							<AiOutlinePlus />
+						</button>
+						<FormControl
+							type="text"
+							placeholder="Add task"
+							value={input}
+							name="text"
+							className="todo-input"
+							onChange={handleChange}
+							ref={inputRef}
+						/>
+					</div>
+				</Form>
+			</Card.Body>
+		</Card>
 	);
 };
 

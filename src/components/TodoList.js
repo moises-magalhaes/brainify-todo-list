@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Card, Container } from "react-bootstrap";
+import Heading from "./Heading";
 import Todo from "./Todo";
 import TodoForm from "./TodoForm";
 
@@ -34,11 +36,19 @@ const TodoList = () => {
 	};
 
 	return (
-		<div>
-			<h1>My to-do-list</h1>
+		<Container>
+			<Heading title="My to-do-list" />
+			<Card>
+				<Card.Body>
+					<Todo
+						todos={todos}
+						completeTodo={completeTodo}
+						removeTodo={removeTodo}
+					/>
+				</Card.Body>
+			</Card>
 			<TodoForm onSubmit={addTodo} />
-			<Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} />
-		</div>
+		</Container>
 	);
 };
 
